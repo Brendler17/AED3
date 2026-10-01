@@ -2,8 +2,8 @@
 
 Implementação em C de duas abordagens para o TSP:
 
-- `src/exactly.c`: algoritmo exato por Branch and Bound (backtracking com poda), com limite de tempo.
-- `src/approximate.c`: algoritmo aproximativo da árvore (2-aproximativo), com MST pelo algoritmo de Prim O(n²) e percurso em pré-ordem.
+- `src/exato.c`: algoritmo exato por Branch and Bound (backtracking com poda), com limite de tempo.
+- `src/aproximado.c`: algoritmo aproximativo da árvore (2-aproximativo), com MST pelo algoritmo de Prim O(n²) e percurso em pré-ordem.
 
 ## Requisitos
 
@@ -19,11 +19,11 @@ Na pasta `TSP/`:
 make
 ```
 
-Isso gera os executáveis `approximate` e `exactly`. Sem `make`:
+Isso gera os executáveis `aproximado` e `exato`. Sem `make`:
 
 ```bash
-gcc -O2 -o approximate src/approximate.c
-gcc -O2 -o exactly src/exactly.c
+gcc -O2 -o aproximado src/aproximado.c
+gcc -O2 -o exato src/exato.c
 ```
 
 ## Execução
@@ -31,9 +31,9 @@ gcc -O2 -o exactly src/exactly.c
 Uma instância:
 
 ```bash
-./approximate data/tsp1_253.txt
-./exactly data/tsp1_253.txt         # limite padrão: 600 s
-./exactly data/tsp5_27603.txt 60    # limite de 60 s
+./aproximado data/tsp1_253.txt
+./exato data/tsp1_253.txt         # limite padrão: 600 s
+./exato data/tsp5_27603.txt 60    # limite de 60 s
 ```
 
 Todas as instâncias:
